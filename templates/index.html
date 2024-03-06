@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>City Data</h1>
+    
+    <div class="form-container">
+        <form action="/city_data" method="get">
+            <label for="city_name">Enter City Name:</label>
+            <input type="text" id="city_name" name="city_name" required>
+            <input type="submit" value="Get Data">
+        </form>
+    </div>
+
+    <div class="city-data-container">
+        {% if city_data %}
+            <h2>City Data for {{ city_name }}</h2>
+            <p>City Name: {{ city_data.name }}</p>
+            <p>Country: {{ city_data.country }}</p>
+            <p>Population: {{ city_data.population }}</p>
+            <p>Latitude: {{ city_data.latitude }}</p>
+            <p>Longitude: {{ city_data.longitude }}</p>
+        {% else %}
+            <p>No city data available for the specified city.</p>
+        {% endif %}
+    </div>    
+
+    <div class="weather-data-container">
+        {% if weather_data %}
+            <h2>Weather Data for {{ city_name }}</h2>
+            <p>Temperature: {{ weather_data.temperature }}</p>
+            <p>Humidity: {{ weather_data.humidity }}</p>
+            <p>Weather Code: {{ weather_data.weatherCode }}</p>
+            <p>Wind Speed: {{ weather_data.windSpeed }}</p>
+            <p>Wind Direction: {{ weather_data.windDirection }}</p>
+            <p>UV Index: {{ weather_data.uvIndex }}</p>
+            <p>Precipitation Intensity: {{ weather_data.precipitationIntensity }}</p>
+        {% else %}
+            <p>No weather data available for the specified city.</p>
+        {% endif %}
+    </div>
+{% endblock %}

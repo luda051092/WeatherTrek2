@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>User Dashboard</h1>
+
+    <p>Welcome, {{ username }}!</p>
+
+    <!-- Add your user dashboard content here -->
+
+    <form action="/logout" method="post">
+        <input type="submit" value="Logout">
+    </form>
+{% endblock %}
+
