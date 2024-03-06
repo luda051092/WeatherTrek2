@@ -4,7 +4,7 @@ import requests
 
 city_bp = Blueprint('city', __name__)
 
-GEOCODING_API_KEY = 'AIzaSyBiQEhekl7cR7Ka8f4XlmSPdai6DC-DQKo'
+GEOCODING_API_KEY = ''
 GEOCODING_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json'
 
 
